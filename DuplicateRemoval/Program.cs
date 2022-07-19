@@ -8,6 +8,7 @@ namespace DuplicateRemoval
     {
         private static void Main(string[] args)
         {
+            Operations operations = new Operations();
             var example = new List<IO>();
             example.Add(new IO { UnixTimeStamp=1615560000, Voltage=1});
             example.Add(new IO { UnixTimeStamp=1615560005, Voltage=1});
@@ -17,8 +18,8 @@ namespace DuplicateRemoval
             example.Add(new IO { UnixTimeStamp=1615560030, Voltage=1});
             example.Add(new IO { UnixTimeStamp=1615560037, Voltage=0});
             example.Add(new IO { UnixTimeStamp=1615560042, Voltage=0});
-            var res = Operations.RemoveDuplicates(example);
-            Operations.PrintSignals(res);
+            var res = operations.RemoveDuplicates(example);
+            operations.PrintSignals(res);
         }
     }
 }

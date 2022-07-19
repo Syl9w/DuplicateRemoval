@@ -12,7 +12,7 @@ public class UnitTest1
     public void TestDuplicateRemovalWithDuplicates()
     {
         //arrange
-
+        Operations operations = new Operations();
         List<IO> expectedData = new List<IO>
             {
                 new IO{UnixTimeStamp=1615560000, Voltage=1},
@@ -20,7 +20,7 @@ public class UnitTest1
                 new IO{UnixTimeStamp=16155600014, Voltage=1},
             };
         //act
-        List<IO> testData = Operations.RemoveDuplicates(new List<IO>{
+        List<IO> testData = operations.RemoveDuplicates(new List<IO>{
                 new IO{UnixTimeStamp=1615560000, Voltage=1},
                 new IO{UnixTimeStamp=1615560005, Voltage=1},
                 new IO{UnixTimeStamp=1615560007, Voltage=1},
@@ -40,14 +40,14 @@ public class UnitTest1
     public void TestDuplicateRemovalWithAllDuplicates()
     {
         //arrange
-
+        Operations operations = new Operations();
         List<IO> expectedData = new List<IO>
             {
                 new IO{UnixTimeStamp=1615560000, Voltage=1},
 
             };
         //act
-        List<IO> testData = Operations.RemoveDuplicates(new List<IO>{
+        List<IO> testData = operations.RemoveDuplicates(new List<IO>{
                 new IO{UnixTimeStamp=1615560000, Voltage=1},
                 new IO{UnixTimeStamp=1615560005, Voltage=1},
                 new IO{UnixTimeStamp=1615560007, Voltage=1},
@@ -66,7 +66,7 @@ public class UnitTest1
     public void TestDuplicateRemovalWithNoDuplicate()
     {
         //arrange
-
+        Operations operations = new Operations();
         List<IO> expectedData = new List<IO>
             {
                 new IO{UnixTimeStamp=1615560000, Voltage=1},
@@ -77,14 +77,14 @@ public class UnitTest1
 
             };
         //act
-        List<IO> testData = Operations.RemoveDuplicates(new List<IO>{
+        List<IO> testData = operations.RemoveDuplicates(new List<IO>{
                 new IO{UnixTimeStamp=1615560000, Voltage=1},
                 new IO{UnixTimeStamp=1615560005, Voltage=0},
                 new IO{UnixTimeStamp=1615560007, Voltage=1},
                 new IO{UnixTimeStamp=1615560010, Voltage=0},
                 new IO{UnixTimeStamp=1615560014, Voltage=1},
             });
-        //Operations.PrintSignals(testData);
+       
         //asserts
         for (int i = 0; i < testData.Count; i++)
         {
