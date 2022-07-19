@@ -8,9 +8,15 @@ IO cotains of two properties
 - UnixTimeStamp - UNIX timestamp of the reading (seconds since 1970-01-01T00:00:00Z).
 - Voltage - Input value: 1 for high voltage, 0 for low voltage
 
-## Installation 
+## Project Installation and Test running
 
-Project built on dotnet6.0. In order to run tests:
+To install project run:
+```bash
+$ git clone https://github.com/Syl9w/DuplicateRemoval
+```
+
+Project built on dotnet6.0. 
+In order to run tests:
 ```bash
 dotnet test DuplicateRemovalUnitTests/DuplicateRemovalUnitTests.csproj 
 ```
