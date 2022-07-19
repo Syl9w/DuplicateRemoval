@@ -27,9 +27,6 @@ namespace DuplicateRemoval
             foreach (var item in input)
                 Console.WriteLine($"{item.UnixTimeStamp}:{item.Voltage}");
         }
-        public static List<IO> SortTimeStamp(List<IO> input)
-        {
-            return input.OrderBy(x=>x.UnixTimeStamp);
-        }
+        
     }
 }
